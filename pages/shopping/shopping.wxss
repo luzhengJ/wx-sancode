@@ -2,14 +2,16 @@
 .container{
     display: flex;
     flex-direction: column;
+    background-color: #f1f1f1;
 }
 .container .advter{
     height: 380rpx;
-    background-color: skyblue;
 }
 .container .advter swiper{
     height: 100%;
 }
-.container .advter .main{
+.container .main{
     flex: 1;
+    display: flex;
+    justify-content: center;
 }

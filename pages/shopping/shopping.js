@@ -32,6 +32,12 @@ Page({
         })
     },
     /**
+     * 点击扫描条形码跳转
+     */
+    handleSancode(){
+   console.log(234);
+    },
+    /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
