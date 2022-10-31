@@ -1,1 +1,15 @@
 /* pages/shopping/shopping.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container .advter{
+    height: 380rpx;
+    background-color: skyblue;
+}
+.container .advter swiper{
+    height: 100%;
+}
+.container .advter .main{
+    flex: 1;
+}

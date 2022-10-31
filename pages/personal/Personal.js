@@ -1,4 +1,4 @@
-// pages/personal/Personal.js
+// pages/personal/personal.js
 Page({
 
     /**

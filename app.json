@@ -2,7 +2,7 @@
     "pages": [
        "pages/shopping/shopping",
        "pages/optimal/optimal",
-       "pages/personal/Personal"
+       "pages/personal/personal"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -25,7 +25,7 @@
                 "iconPath":"/assets/images/product02.png",
                 "selectedIconPath":"/assets/images/product01.png"
             },  {
-                "pagePath":"pages/personal/Personal",
+                "pagePath":"pages/personal/personal",
                 "text":"个人中心",
                 "iconPath":"/assets/images/user02.png",
                 "selectedIconPath":"/assets/images/user01.png"

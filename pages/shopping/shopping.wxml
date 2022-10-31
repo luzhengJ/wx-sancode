@@ -1,1 +1,6 @@
-<view>扫码支付</view>
+<view class="container">
+<view class="advter">
+<i-swiper advterList="{{advterList}}"></i-swiper>
+</view>
+<view class="main">扫码支付</view>
+</view>
