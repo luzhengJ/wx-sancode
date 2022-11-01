@@ -1,6 +1,6 @@
 // pages/shopping/shopping.js
+import IndexModel from "../../model/indexModel"
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -32,16 +32,47 @@ Page({
         })
     },
     /**
-     * 点击扫描条形码跳转
+     * 点击扫描条形码触发点击事件
      */
     handleSancode(){
    console.log(234);
+   //只允许从相机扫码，开启扫码
+   wx.scanCode({
+     onlyFromCamera: true,
+     success(res){
+        const {result} = res
+        console.log(res);
+        this.getScanCodeInfo(result)
+     }
+   })
+    },
+    /**
+     * 点击扫描条形码获取数据
+     */
+    getScanCodeInfo(code){
+    
+    },
+    /**
+     * 获取轮播图的数据
+     */
+    async getBanner(){
+      const response = await IndexModel.getBanner()
+      console.log("banner=>",response);
+    },
+    /**
+     * 获取导航栏
+     */
+    async getNav(){
+      const response = await IndexModel.getNav()
+      console.log("getnav=>",response);
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
     this.getAdvterList()
+    this.getBanner()
+    this.getNav()
     },
 
     /**
