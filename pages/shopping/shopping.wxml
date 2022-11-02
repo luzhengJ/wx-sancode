@@ -3,6 +3,6 @@
 <i-swiper advterList="{{advterList}}"></i-swiper>
 </view>
 <view class="main">
-<i-code bindSancode="handleSancode"></i-code>
+<i-code bindSancode="handleScanCode"></i-code>
 </view>
 </view>

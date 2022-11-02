@@ -1,5 +1,6 @@
-// pages/shopping/shopping.js
-import IndexModel from "../../model/indexModel"
+// import IndexModel from "../../model/indexModel"
+
+import shoppingModel from "../../model/shoppingModel"
 Page({
     /**
      * 页面的初始数据
@@ -34,45 +35,62 @@ Page({
     /**
      * 点击扫描条形码触发点击事件
      */
-    handleSancode(){
-   console.log(234);
+    handleScanCode(){
    //只允许从相机扫码，开启扫码
    wx.scanCode({
      onlyFromCamera: true,
-     success(res){
+     success:(res)=>{
         const {result} = res
-        console.log(res);
-        this.getScanCodeInfo(result)
+        this.getProductionInfo(result)
      }
    })
     },
     /**
      * 点击扫描条形码获取数据
      */
-    getScanCodeInfo(code){
-    
+   async getProductionInfo(code){
+   try {
+    let data = {qcode : code}
+    const response = await shoppingModel.getProductInfo(data)
+    console.log('res=>',response);
+    if(response.length > 0){
+    // 获取到的数据存储到本地
+    // 跳转到购物车页面
+    wx.navigateTo({
+      url: '/pages/cart/cart',
+      
+    })
+    }else{
+      wx.showToast({
+        title: '获取商品失败',
+        icon:"none"
+      })
+    }
+   } catch (error) {
+    console.log(error)
+   }
     },
     /**
      * 获取轮播图的数据
      */
-    async getBanner(){
-      const response = await IndexModel.getBanner()
-      console.log("banner=>",response);
-    },
+    // async getBanner(){
+    //   const response = await IndexModel.getBanner()
+    //   console.log("banner=>",response);
+    // },
     /**
      * 获取导航栏
      */
-    async getNav(){
-      const response = await IndexModel.getNav()
-      console.log("getnav=>",response);
-    },
+    // async getNav(){
+    //   const response = await IndexModel.getNav()
+    //   console.log("getnav=>",response);
+    // },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
     this.getAdvterList()
-    this.getBanner()
-    this.getNav()
+    // this.getBanner()
+    // this.getNav()
     },
 
     /**

@@ -2,7 +2,8 @@
     "pages": [
        "pages/shopping/shopping",
        "pages/optimal/optimal",
-       "pages/personal/personal"
+       "pages/personal/personal",
+       "pages/cart/cart"
     ],
     "window": {
         "backgroundTextStyle": "light",

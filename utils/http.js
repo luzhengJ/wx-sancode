@@ -8,6 +8,8 @@ class Http{
     wx.showLoading({
       title: '加载中',
     })
+    let token = true
+    if(token) header.token = "aidls"
     return Http._request({url,method,data,header})
   }
   // 私有方法
@@ -23,8 +25,8 @@ class Http{
         }
       })
       //请求成功后 将成功的数据返回出去
-      if(res.statusCode === 200 && res.data.code === 200){
-        return res.data.data
+      if(res.statusCode === 200){
+        return res.data.result
       }
       // 请求失败 错误提示
       Http._showErrorMessage(res.statusCode,res.data.msg)
@@ -41,7 +43,8 @@ class Http{
     let title = exceptionMessage[error_code || msg || "未知错误"]
     wx.showToast({
       title:title,
-      icon:"none"
+      icon:"none",
+      duration:3000
     })
   }
 }

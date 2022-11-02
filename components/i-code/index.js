@@ -18,7 +18,7 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        handleClick(){
+      handleScanCode(){
             this.triggerEvent("Sancode")
         }
     }
