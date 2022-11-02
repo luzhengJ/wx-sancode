@@ -1,1 +1,107 @@
-/* pages/cart/cart.wxss */
+/* 整体盒子 */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* 列表部分 */
+.container .list{
+  flex: 1;
+  padding-bottom: 160rpx;
+}
+.container .list .list-item{
+  padding: 20rpx;
+  border-bottom:1rpx solid #eee;
+  position: relative;
+}
+.container .list-item .title{
+  color: #333;
+}
+.container .list-item .specifications{
+  color: #777;
+  font-size: 27rpx;
+  padding: 15rpx 0;
+}
+.container .list-item .price{
+  color:#ff5c5a;
+}
+/* 右侧数量加减布局 */
+.container .list-item .computed{
+  display: flex;
+  position: absolute;
+  right: 8rpx;
+  top: 124rpx;
+}
+.container .computed .button{
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.container .computed .decrement{
+  border:1rpx solid #FEBE1B;
+  background-color: #fff;
+  color : #FEBE1B;
+}
+.container .computed .increment{
+  background-color: #FEBE1B;
+  color : #fff;
+}
+.container .computed input{
+  width: 160rpx;
+  box-sizing: border-box;
+  height : 60rpx;
+  border:1rpx solid #FEBE1B;
+  border-radius: 50rpx;
+  margin: 0 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+/* 底部部分 */
+.container .footer{
+  display: flex;
+  flex-direction: column;
+  height: 160rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.container .footer .total{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  color: #9da19d;
+  font-size: 28rpx;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 2px #ccc;
+}
+.container .total text{
+  color: #ff5c5a;
+  padding: 0 10rpx;
+}
+.container .footer .group{
+  display: flex;
+  flex: 1;
+}
+.container .group view{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .group .add{
+  flex: 1;
+  background-color: #ffdc2e;
+  color: #fff;
+}
+.container .group .settlement{
+  background-color: #ff5c5a;
+  color: #fff;
+}
+.container .settlement text{
+  padding: 10rpx;
+}
