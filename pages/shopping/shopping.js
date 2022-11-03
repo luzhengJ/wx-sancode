@@ -1,6 +1,7 @@
 // import IndexModel from "../../model/indexModel"
 
 import shoppingModel from "../../model/shoppingModel"
+import {addCart} from "../../common/cart"
 Page({
     /**
      * 页面的初始数据
@@ -55,10 +56,10 @@ Page({
     console.log('res=>',response);
     if(response.length > 0){
     // 获取到的数据存储到本地
+    addCart(response[0])
     // 跳转到购物车页面
     wx.navigateTo({
       url: '/pages/cart/cart',
-      
     })
     }else{
       wx.showToast({
